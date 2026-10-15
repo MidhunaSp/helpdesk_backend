@@ -65,6 +65,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/api/jobtitle/update/{executiveId}").hasAuthority("MANAGER")
                         // Manager assigning the ticket to executive
                         .requestMatchers(HttpMethod.PUT,"/api/ticket/assign/{executiveId}/{ticketId}").hasAuthority("MANAGER")
+                        .requestMatchers(HttpMethod.POST,"/api/plan/batch/add").hasAuthority("ADMIN")
                         .anyRequest().permitAll()
                 );
         // Add jwt filter before Spring's Auth Filter

@@ -77,6 +77,20 @@ public class GlobalExceptionHandler {
                                 Instant.now())
                 );
     }
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorRespDto> handleException(
+            Exception e
+    ){
+        //always reply the object not the string
+
+        return ResponseEntity
+                .badRequest()
+                .body(
+                        new ErrorRespDto(e.getMessage(),
+                                "Invalid data passed",
+                                Instant.now())
+                );
+    }
 }
 
 /*
