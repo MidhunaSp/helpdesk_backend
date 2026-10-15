@@ -17,6 +17,7 @@ import com.springboot.helpdesk.repository.CustomerRepository;
 import com.springboot.helpdesk.repository.ExecutiveRepository;
 import com.springboot.helpdesk.repository.TicketRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class TicketService {
 
     private final TicketRepository ticketRepository;
@@ -43,16 +45,16 @@ public class TicketService {
 
         Customer customer =  customerRepository.getByUsername(customerUsername);
 
-        System.out.println("i am at line 46");
+        log.info("i am at line 46");
         Ticket ticket = TicketMapper.convertDtoToEntity(ticketDto);
 
-        System.out.println("i am at line 49");
+        log.info("i am at line 49");
         ticket.setCustomer(customer);
 
-        System.out.println("i am at line 52");
+        log.info("i am at line 52");
         ticket.setStatus(Status.OPEN);
 
-        System.out.println("i am at line 55");
+        log.info("i am at line 55");
         ticketRepository.save(ticket);
 
     }
