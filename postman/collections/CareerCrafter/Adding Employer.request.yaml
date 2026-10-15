@@ -1,0 +1,7 @@
+$kind: http-request
+url: localhost:8080/api/employer/add
+method: POST
+body:
+  type: json
+  content: ""
+order: 5000

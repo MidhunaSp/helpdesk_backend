@@ -1,0 +1,13 @@
+$kind: http-request
+url: localhost:8080/api/admin/add
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"username\" : \"admin\",\r
+
+    \    \"password\" : \"{{auth_password_1c2f}}\"\r
+
+    }"
+order: 7000

@@ -1,0 +1,7 @@
+$kind: http-request
+description: ""
+url: localhost:8080/api/ticket/by-status?status=OPEN
+method: GET
+queryParams:
+  status: OPEN
+order: 4473246039944733

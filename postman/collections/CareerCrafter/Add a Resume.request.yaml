@@ -1,0 +1,4 @@
+$kind: http-request
+url: localhost:8080/api/resume/add/1
+method: POST
+order: 14000

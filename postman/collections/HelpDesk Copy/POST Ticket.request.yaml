@@ -1,0 +1,20 @@
+$kind: http-request
+url: localhost:8080/api/ticket/add
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"subject\" : \"Internet Not Working\",\r
+
+    \    \"issue\": \"VPN not establishing connection. cannot access app dependencies from nexus\",\r
+
+    \    \"priority\": \"HIGH\"\r
+
+    }"
+auth:
+  type: basic
+  credentials:
+    username: hermione
+    password: "{{auth_password_01pq}}"
+order: 1000

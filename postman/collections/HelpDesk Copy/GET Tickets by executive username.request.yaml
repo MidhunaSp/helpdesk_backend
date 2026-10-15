@@ -1,0 +1,8 @@
+$kind: http-request
+url: localhost:8080/api/ticket/executive?username=emma
+method: GET
+queryParams:
+  username: emma
+auth:
+  type: noauth
+order: 6000

@@ -1,0 +1,19 @@
+$kind: http-request
+url: localhost:8080/api/customer/add
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Midhuna Samuvel\",\r
+
+    \  \"city\": \"Chennai\",\r
+
+    \  \"email\": \"midhuna@example.com\",\r
+
+    \  \"username\": \"midhuna\",\r
+
+    \  \"password\": \"pass1234\"\r
+
+    }"
+order: 4473246039947733

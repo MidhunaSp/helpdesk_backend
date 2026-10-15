@@ -1,0 +1,8 @@
+$kind: http-request
+description: ""
+url: "localhost:8080/api/ticket/v2?username=karthik01 & page=0 "
+method: GET
+queryParams:
+  username: "karthik01 "
+  " page": "0 "
+order: 3724830370565668

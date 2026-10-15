@@ -1,0 +1,6 @@
+$kind: http-request
+url: /api/jobseeker/by-username?username=midhu
+method: GET
+queryParams:
+  username: midhu
+order: 12000

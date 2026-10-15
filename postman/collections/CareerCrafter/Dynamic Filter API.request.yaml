@@ -1,0 +1,6 @@
+$kind: http-request
+url: localhost:8080/api/jobseeker/filter?skills=java
+method: GET
+queryParams:
+  skills: java
+order: 17000

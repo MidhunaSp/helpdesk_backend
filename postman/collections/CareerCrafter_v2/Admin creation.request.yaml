@@ -1,0 +1,15 @@
+$kind: http-request
+url: localhost:8080/api/admin/add
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"fullName\":\"Aiswarya Samuvel\",\r
+
+    \    \"username\":\"aishu\",\r
+
+    \    \"password\":\"aishu@14\"\r
+
+    }"
+order: 1000

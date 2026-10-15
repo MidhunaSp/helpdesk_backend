@@ -1,0 +1,7 @@
+$kind: http-request
+description: ""
+url: localhost:8080/api/ticket/by-priority?priority=HIGH
+method: GET
+queryParams:
+  priority: HIGH
+order: 4473246039943733

@@ -1,0 +1,14 @@
+$kind: http-request
+description: ""
+url: http://localhost:8080/api/plan/add
+method: POST
+body:
+  type: json
+  content: "{ \r
+
+    \    \"planType\": \"BASIC_10MBPS\", \r
+
+    \    \"price\": 499.0 \r
+
+    }"
+order: 4381396009260006

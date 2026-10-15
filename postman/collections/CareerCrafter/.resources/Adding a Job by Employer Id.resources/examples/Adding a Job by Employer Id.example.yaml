@@ -1,0 +1,44 @@
+$kind: http-example
+request:
+  url: localhost:8080/api/job/add/1
+  method: POST
+  body:
+    type: json
+    content: "{\r
+
+      \  \"title\": \"Data Analyst\",\r
+
+      \  \"description\": \"Analyse hiring and application data and build weekly dashboards\",\r
+
+      \  \"qualifications\": \"SQL, Excel, Power BI, 1+ year experience\",\r
+
+      \  \"location\": \"Hyderabad\",\r
+
+      \  \"industry\": \"Analytics\",\r
+
+      \  \"employmentType\": \"FULL_TIME\",\r
+
+      \  \"minSalary\": 500000,\r
+
+      \  \"maxSalary\": 800000,\r
+
+      \  \"applicationInstructions\": \"Share a sample dashboard or portfolio link\"\r
+
+      }"
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    content-type: application/json
+    transfer-encoding: chunked
+    date: Sun, 11 Oct 2026 08:49:52 GMT
+    keep-alive: timeout=60
+    connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+        "id": 2,
+        "message": "Job posted"
+      }
+order: 1000

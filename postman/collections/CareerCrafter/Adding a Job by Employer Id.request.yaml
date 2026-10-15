@@ -1,0 +1,38 @@
+$kind: http-request
+url: localhost:8080/api/job/add/1
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"id\": 1,\r
+
+    \  \"title\": \"Java Developer\",\r
+
+    \  \"description\": \"Build REST APIs with Spring Boot\",\r
+
+    \  \"qualifications\": \"B.E/B.Tech, Spring Boot, MySQL\",\r
+
+    \  \"location\": \"Chennai\",\r
+
+    \  \"industry\": \"IT\",\r
+
+    \  \"employmentType\": \"FULL_TIME\",\r
+
+    \  \"minSalary\": 400000.0,\r
+
+    \  \"maxSalary\": 700000.0,\r
+
+    \  \"applicationInstructions\": \"Attach your latest resume\",\r
+
+    \  \"active\": true,\r
+
+    \  \"createdAt\": \"2026-10-10T20:15:30.123456\",\r
+
+    \  \"employerId\": 1,\r
+
+    \  \"companyName\": \"TechCorp\"\r
+
+    }"
+examples: .resources/Adding a Job by Employer Id.resources/examples
+order: 11000

@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:8080/api/employer/by-username?username=sneha_hr
+method: GET
+queryParams:
+  username: sneha_hr
+order: 9000

@@ -1,0 +1,4 @@
+$kind: http-request
+url: localhost:8080/api/notification/user/5
+method: GET
+order: 23000

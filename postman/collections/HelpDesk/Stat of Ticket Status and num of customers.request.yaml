@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: localhost:8080/api/manager/ticket/status/stat/customer/count
+method: GET
+order: 4473246039942733

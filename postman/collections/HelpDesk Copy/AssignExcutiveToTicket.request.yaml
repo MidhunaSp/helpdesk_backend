@@ -1,0 +1,6 @@
+$kind: http-request
+url: localhost:8080/api/ticket/assign/2/1
+method: PUT
+auth:
+  type: noauth
+order: 3000

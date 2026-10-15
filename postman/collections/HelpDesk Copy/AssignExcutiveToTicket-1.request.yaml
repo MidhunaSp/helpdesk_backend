@@ -1,0 +1,10 @@
+$kind: http-request
+name: AssignExcutiveToTicket
+url: localhost:8080/api/ticket/assign/1/1
+method: PUT
+auth:
+  type: basic
+  credentials:
+    username: albus
+    password: "{{auth_password_1c2f}}"
+order: 9000

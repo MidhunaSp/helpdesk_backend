@@ -1,0 +1,7 @@
+$kind: http-request
+url: localhost:8080/api/ticket/v1/2?page=0&size=10
+method: GET
+queryParams:
+  page: "0"
+  size: "10"
+order: 3242601501687878

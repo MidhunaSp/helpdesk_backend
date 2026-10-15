@@ -1,0 +1,15 @@
+$kind: http-request
+url: localhost:8080/api/ticket/add/2
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"subject\": \"Network is not working properly\",\r
+
+    \  \"issue\": \"VPN keeps disconnecting every few minutes and I cannot access internal tools.\",\r
+
+    \  \"priority\": \"HIGH\"\r
+
+    }"
+order: 1791436047515

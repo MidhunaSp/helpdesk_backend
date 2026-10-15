@@ -1,0 +1,4 @@
+$kind: http-request
+url: localhost:8080/api/jobseeker/2
+method: DELETE
+order: 19000

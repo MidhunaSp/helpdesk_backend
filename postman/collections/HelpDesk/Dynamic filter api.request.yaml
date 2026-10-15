@@ -1,0 +1,10 @@
+$kind: http-request
+description: ""
+url: localhost:8080/api/ticket/filter?priority=HIGH&status=OPEN&fromDate=2026-10-01&toDate=2026-10-31
+method: GET
+queryParams:
+  priority: HIGH
+  status: OPEN
+  fromDate: 2026-10-01
+  toDate: 2026-10-31
+order: 4473246039946733

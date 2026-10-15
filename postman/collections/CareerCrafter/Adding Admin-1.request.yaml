@@ -1,0 +1,6 @@
+$kind: http-request
+name: Adding Admin
+description: ""
+url: localhost:8080/api/admin/add
+method: POST
+order: 4000

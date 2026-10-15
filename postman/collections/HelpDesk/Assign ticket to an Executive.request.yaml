@@ -1,0 +1,4 @@
+$kind: http-request
+url: localhost:8080/api/ticket/assign/1/3
+method: PUT
+order: 2699846101872822

@@ -1,0 +1,20 @@
+$kind: http-request
+url: localhost:8080/api/manager/add
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\":\"Albus Dumbledore\",\r
+
+    \    \"username\" : \"albus\",\r
+
+    \    \"password\" : \"{{auth_password_1c2f}}\"\r
+
+    }"
+auth:
+  type: basic
+  credentials:
+    username: admin
+    password: "{{auth_password_1c2f}}"
+order: 8000

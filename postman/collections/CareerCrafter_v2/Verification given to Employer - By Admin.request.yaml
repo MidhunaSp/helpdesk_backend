@@ -1,0 +1,4 @@
+$kind: http-request
+url: localhost:8080/api/employer/verify/{adminId}/{employerId}
+method: PUT
+order: 6000

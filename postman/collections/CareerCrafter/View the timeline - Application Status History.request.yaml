@@ -1,0 +1,5 @@
+$kind: http-request
+url: localhost:8080/api/applicationStatusHistory/1
+method: GET
+examples: .resources/View the timeline - Application Status History.resources/examples
+order: 21000

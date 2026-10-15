@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: localhost:8080/api/manager/jobtitle/stat/executive/count
+method: GET
+order: 4473246039941733

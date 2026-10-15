@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: localhost:8080/api/applicationStatusHistory/1
+  method: GET
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    content-type: application/json
+    transfer-encoding: chunked
+    date: Sun, 11 Oct 2026 13:31:49 GMT
+    keep-alive: timeout=60
+    connection: keep-alive
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "id": 1,
+          "status": "APPLIED",
+          "note": "Application submitted",
+          "changedAt": "2026-10-11T11:25:09.107924Z"
+        },
+        {
+          "id": 2,
+          "status": "UNDER_REVIEW",
+          "note": "Resume is being reviewed by the hiring team",
+          "changedAt": "2026-10-11T13:31:09.801008Z"
+        }
+      ]
+order: 1000

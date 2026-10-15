@@ -1,0 +1,9 @@
+$kind: http-request
+name: Derived Query - Fetch tickets by priority and status (findByPriorityAndStatus)
+description: ""
+url: localhost:8080/api/ticket/by-priority-and-status?priority=HIGH&status=OPEN
+method: GET
+queryParams:
+  priority: HIGH
+  status: OPEN
+order: 4473246039945733

@@ -1,0 +1,19 @@
+$kind: http-request
+url: localhost:8080/api/employer/add
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"fullName\": \"Rahul Sharma\",\r
+
+    \  \"companyName\": \"BrightTech Solutions\",\r
+
+    \  \"phone\": \"9123456780\",\r
+
+    \  \"username\": \"rahul_emp\",\r
+
+    \  \"password\": \"Rahul@123\"\r
+
+    }"
+order: 2000

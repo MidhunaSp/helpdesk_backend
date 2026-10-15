@@ -1,0 +1,13 @@
+$kind: http-request
+url: localhost:8080/api/notification/add/5
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"message\": \"Your application is under review\",\r
+
+    \  \"type\": \"APPLICATION_STATUS_CHANGE\"\r
+
+    }"
+order: 22000

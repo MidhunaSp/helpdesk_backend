@@ -1,0 +1,25 @@
+$kind: http-request
+url: localhost:8080/api/jobseeker/add
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"fullName\": \"Mahi Varshini\",\r
+
+    \  \"phone\": \"9090909090\",\r
+
+    \  \"location\": \"Chennai\",\r
+
+    \  \"education\": \"B.Tech Information Technology\",\r
+
+    \  \"experience\": \"Fresher\",\r
+
+    \  \"skills\": \"Java, Spring Boot, MySQL, REST APIs\",\r
+
+    \  \"username\": \"mahi05\",\r
+
+    \  \"password\": \"mahi@123\"\r
+
+    }"
+order: 6000

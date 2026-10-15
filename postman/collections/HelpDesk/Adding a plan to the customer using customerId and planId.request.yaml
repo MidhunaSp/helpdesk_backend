@@ -1,0 +1,18 @@
+$kind: http-request
+description: ""
+url: localhost:8080/api/customerPlan/add/2/1
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"activationDate\": \"2026-10-08\",\r
+
+    \  \"endDate\": \"2026-11-08\",\r
+
+    \  \"coupon\": \"WELCOME10\",\r
+
+    \  \"amountPaid\": 449.0\r
+
+    }"
+order: 4473246039940733

@@ -1,0 +1,10 @@
+$kind: http-request
+url: localhost:8080/api/ticket/v2?username=frodo&page=0&size=5
+method: GET
+queryParams:
+  username: frodo
+  page: "0"
+  size: "5"
+auth:
+  type: noauth
+order: 4000

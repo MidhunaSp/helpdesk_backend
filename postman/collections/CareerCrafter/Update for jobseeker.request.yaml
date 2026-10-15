@@ -1,0 +1,15 @@
+$kind: http-request
+url: localhost:8080/api/jobseeker/1
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"skills\": \"Java, Spring Boot, MySQL, Docker\",\r
+
+    \  \"location\": \"Bengaluru\",\r
+
+    \  \"experience\": \"6 months internship at TechCorp\"\r
+
+    }"
+order: 18000

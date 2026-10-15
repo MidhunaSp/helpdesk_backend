@@ -1,0 +1,6 @@
+$kind: http-request
+url: localhost:8080/api/employer/by-verification?status=VERIFIED
+method: GET
+queryParams:
+  status: VERIFIED
+order: 10000
