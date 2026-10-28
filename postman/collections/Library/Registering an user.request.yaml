@@ -1,0 +1,13 @@
+$kind: http-request
+url: localhost:8080/api/user/add
+method: POST
+body:
+  type: json
+  content: "{ \r
+
+    \    \"username\": \"john\", \r
+
+    \    \"password\": \"john@123\" \r
+
+    }"
+order: 2000

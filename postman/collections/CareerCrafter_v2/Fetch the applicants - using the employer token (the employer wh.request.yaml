@@ -1,0 +1,21 @@
+$kind: http-request
+name: Fetch the applicants - using the employer token (the employer who posted the job)
+url: localhost:8080/api/jobApplication/job/1?page=0&size=5
+method: GET
+queryParams:
+  page: "0"
+  size: "5"
+body:
+  type: json
+  content: "{ \r
+
+    \    \"status\": \"UNDER_REVIEW\", \r
+
+    \    \"note\": \"Resume is being reviewed\" \r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_046i}}"
+order: 17000

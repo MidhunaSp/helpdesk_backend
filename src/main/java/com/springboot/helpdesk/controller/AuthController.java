@@ -3,6 +3,7 @@ package com.springboot.helpdesk.controller;
 import com.springboot.helpdesk.dto.response.TokenDto;
 import com.springboot.helpdesk.utility.JwtUtility;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:5173/")
 public class AuthController {
 
     private final JwtUtility jwtUtility;

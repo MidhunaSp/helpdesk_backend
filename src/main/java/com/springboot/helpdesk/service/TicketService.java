@@ -22,6 +22,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.List;
@@ -138,6 +139,11 @@ public class TicketService {
                 status,
                 fromDate == null ? null: fromDate.atStartOfDay(ZoneOffset.UTC).toInstant(),
                 toDate == null? null:toDate.atStartOfDay(ZoneOffset.UTC).toInstant());
+    }
+
+
+    public List<Ticket> getTicketsByDate(Instant fromInstant, Instant toInstant) {
+        return ticketRepository.findByCreatedAtBetween(fromInstant,toInstant);
     }
 } // yyyy-MM-ddThh:mm:sec.nano
 

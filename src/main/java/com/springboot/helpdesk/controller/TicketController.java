@@ -7,13 +7,16 @@ import com.springboot.helpdesk.dto.response.TicketRespDto;
 import com.springboot.helpdesk.dto.response.TicketStatusStatDto;
 import com.springboot.helpdesk.enums.Priority;
 import com.springboot.helpdesk.enums.Status;
+import com.springboot.helpdesk.model.Ticket;
 import com.springboot.helpdesk.service.TicketService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneOffset;
 import java.util.List;
 
 @RestController
@@ -104,6 +107,16 @@ public class TicketController {
                                                    @RequestParam(value = "toDate", required = false)LocalDate toDate
     ){
         return ticketService.dynamicFilterTicket(priority,status, fromDate, toDate);
+    }
+
+    @GetMapping("/api/tickets/by-date")
+    public List<Ticket> getTicketsByDate(@RequestParam LocalDate fromDate,
+                                         @RequestParam LocalDate toDate){
+        Instant fromInstant = fromDate.atStartOfDay(ZoneOffset.UTC)
+                .toInstant();
+        Instant toInstant = toDate.plusDays(1).atStartOfDay(ZoneOffset.UTC)
+                .toInstant();
+        return ticketService.getTicketsByDate(fromInstant,toInstant);
     }
 }
 /*

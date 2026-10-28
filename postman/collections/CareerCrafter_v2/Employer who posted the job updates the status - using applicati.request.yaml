@@ -1,0 +1,5 @@
+$kind: http-request
+name: Employer who posted the job updates the status - using application id
+url: ""
+method: GET
+order: 18000

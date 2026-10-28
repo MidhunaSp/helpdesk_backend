@@ -1,0 +1,11 @@
+$kind: http-request
+url: localhost:8080/api/savedJob/add/2/1
+method: POST
+body:
+  type: json
+  content: ""
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_1c32}}"
+order: 20000

@@ -1,0 +1,15 @@
+$kind: http-request
+url: localhost:8080/api/notification/add/3
+method: POST
+body:
+  type: json
+  content: "\r
+
+    {\r
+
+    \  \"message\": \"Your job application status has been updated.\",\r
+
+    \  \"type\": \"APPLICATION_STATUS_CHANGE\"\r
+
+    }\r\n"
+order: 26000

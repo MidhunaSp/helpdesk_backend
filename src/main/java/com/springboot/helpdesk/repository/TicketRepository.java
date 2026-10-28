@@ -134,6 +134,7 @@ public interface TicketRepository extends JpaRepository<Ticket,Long> {
         """)
     List<JobTitleExecutiveCountDto> getTicketStatusCustomerCount();
 
+    List<Ticket> findByCreatedAtBetween(Instant fromInstant, Instant toInstant);
 }
 
 

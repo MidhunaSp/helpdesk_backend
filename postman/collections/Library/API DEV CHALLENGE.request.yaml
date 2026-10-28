@@ -1,0 +1,9 @@
+$kind: http-request
+url: localhost:8080/api/employee/by-jobtitle-and-company?jobTitle=DEV&companyName=ABC&page=0&size=5
+method: GET
+queryParams:
+  jobTitle: DEV
+  companyName: ABC
+  page: "0"
+  size: "5"
+order: 12000

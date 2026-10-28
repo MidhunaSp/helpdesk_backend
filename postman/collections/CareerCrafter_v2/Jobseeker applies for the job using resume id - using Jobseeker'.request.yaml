@@ -1,0 +1,5 @@
+$kind: http-request
+name: Jobseeker applies for the job using resume id - using Jobseeker's token
+url: ""
+method: GET
+order: 15000

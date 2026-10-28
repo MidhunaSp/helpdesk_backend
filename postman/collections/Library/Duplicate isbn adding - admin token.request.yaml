@@ -1,0 +1,4 @@
+$kind: http-request
+url: localhost:8080/api/book/add
+method: POST
+order: 10000

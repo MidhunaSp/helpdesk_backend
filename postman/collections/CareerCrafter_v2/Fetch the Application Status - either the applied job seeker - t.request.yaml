@@ -1,0 +1,5 @@
+$kind: http-request
+name: Fetch the Application Status - either the applied job seeker / the employer of that job
+url: ""
+method: GET
+order: 19000

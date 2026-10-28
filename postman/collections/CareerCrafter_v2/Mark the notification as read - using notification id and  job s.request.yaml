@@ -1,0 +1,9 @@
+$kind: http-request
+name: Mark the notification as read - using notification id and  job seeker 's token
+url: localhost:8080/api/notification/1/read
+method: PUT
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_0vw5}}"
+order: 28000

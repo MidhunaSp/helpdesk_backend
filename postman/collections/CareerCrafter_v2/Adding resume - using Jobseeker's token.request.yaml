@@ -1,0 +1,21 @@
+$kind: http-request
+url: localhost:8080/api/resume/add/1
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"fileName\": \"priya_cv.pdf\",\r
+
+    \  \"filePath\": \"/uploads/priya_cv.pdf\",\r
+
+    \  \"label\": \"Java Resume\",\r
+
+    \  \"isDefault\": true\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_198y}}"
+order: 14000
