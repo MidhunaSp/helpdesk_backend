@@ -7,6 +7,7 @@ import com.springboot.helpdesk.dto.response.TicketRespDto;
 import com.springboot.helpdesk.dto.response.TicketStatusStatDto;
 import com.springboot.helpdesk.enums.Priority;
 import com.springboot.helpdesk.enums.Status;
+import com.springboot.helpdesk.exception.InvalidCallException;
 import com.springboot.helpdesk.exception.OwnershipException;
 import com.springboot.helpdesk.exception.ResourceNotFoundException;
 import com.springboot.helpdesk.mapper.TicketMapper;
@@ -36,7 +37,7 @@ public class TicketService {
     private final CustomerRepository customerRepository;
     private final ExecutiveRepository executiveRepository;
 
-    public void add(String customerUsername, TicketDto ticketDto) {
+    public TicketRespDto add(String customerUsername, TicketDto ticketDto) {
 
         // Step 1: Fetch Customer Object from DB using given customerId
         // Step 2: Map TicketDto to Ticket entity
@@ -56,7 +57,9 @@ public class TicketService {
         ticket.setStatus(Status.OPEN);
 
         log.info("i am at line 55");
-        ticketRepository.save(ticket);
+        ticket =  ticketRepository.save(ticket);
+        return TicketMapper.convertEntityToDto(ticket);
+        //ticketRepository.save(ticket);
 
     }
 
@@ -144,6 +147,17 @@ public class TicketService {
 
     public List<Ticket> getTicketsByDate(Instant fromInstant, Instant toInstant) {
         return ticketRepository.findByCreatedAtBetween(fromInstant,toInstant);
+    }
+
+    public void deleteTicketHard(long id, String username) {
+
+        Ticket ticket  = ticketRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("Ticket if Invalid."));
+
+        if(! (ticket.getCustomer().getUser().getUsername().equals(username)))
+            throw new InvalidCallException("Operation not allowed.");
+
+        ticketRepository.delete(ticket);
     }
 } // yyyy-MM-ddThh:mm:sec.nano
 

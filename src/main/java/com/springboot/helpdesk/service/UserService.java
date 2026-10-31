@@ -1,7 +1,10 @@
 package com.springboot.helpdesk.service;
 
 import com.springboot.helpdesk.dto.request.AdminDto;
+import com.springboot.helpdesk.dto.response.DetailsDto;
 import com.springboot.helpdesk.enums.Role;
+import com.springboot.helpdesk.exception.InactiveUserException;
+import com.springboot.helpdesk.exception.ResourceNotFoundException;
 import com.springboot.helpdesk.model.User;
 import com.springboot.helpdesk.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -31,4 +34,21 @@ public class UserService {
         // Save user in DB
         userRepository.save(user);
     }
+
+    public DetailsDto getUserDetails(String loggedInUsername) {
+        DetailsDto detailsDto = userRepository.getUserDetails(loggedInUsername);
+        if(!detailsDto.isActive())
+            throw new InactiveUserException("User is disabled");
+        return detailsDto;
+    }
+
+    public void updateUserStatus(String username, boolean active) {
+        User user = userRepository.loadUserByUsername(username);
+        if (user == null) {
+            throw new ResourceNotFoundException("User not found");
+        }
+        user.setActive(active);
+        userRepository.save(user);
+    }
 }
+

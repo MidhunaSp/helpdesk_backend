@@ -1,11 +1,13 @@
 package com.springboot.helpdesk.config;
 
 import com.springboot.helpdesk.dto.response.ErrorRespDto;
+import com.springboot.helpdesk.exception.InactiveUserException;
 import com.springboot.helpdesk.exception.InvalidCallException;
 import com.springboot.helpdesk.exception.OwnershipException;
 import com.springboot.helpdesk.exception.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -89,6 +91,16 @@ public class GlobalExceptionHandler {
                         new ErrorRespDto(e.getMessage(),
                                 "Invalid data passed",
                                 Instant.now())
+                );
+    }
+    @ExceptionHandler(InactiveUserException.class)
+    public ResponseEntity<ErrorRespDto> handleInactiveUserException(InactiveUserException e){
+        return ResponseEntity
+                .status(HttpStatus.PRECONDITION_FAILED)
+                .body(
+                        new ErrorRespDto(e.getMessage(),
+                                "Reach to ADMIN admin@helpdesk.com",
+                                            Instant.now())
                 );
     }
 }

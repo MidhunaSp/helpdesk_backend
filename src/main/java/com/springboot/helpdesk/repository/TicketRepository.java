@@ -41,9 +41,9 @@ public interface TicketRepository extends JpaRepository<Ticket,Long> {
             select new com.springboot.helpdesk.dto.response.TicketInfoDto(t.id,t.subject,
             t.createdAt,t.priority,t.status,c.name,e.name,e.email)
             from Ticket t
-            JOIN t.customer c
-            JOIN t.executive e
-            JOIN c.user u
+            LEFT JOIN t.customer c
+            LEFT JOIN t.executive e
+            LEFT JOIN c.user u
             where u.username = ?1
             """)
 

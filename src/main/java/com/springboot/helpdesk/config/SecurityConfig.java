@@ -51,10 +51,16 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/customer/add").permitAll()
                         // login API
                         .requestMatchers(HttpMethod.GET,"/api/auth/login").authenticated()
+                        // user details API
+                        .requestMatchers(HttpMethod.GET,"/api/auth/user-details").authenticated()
                         .requestMatchers(HttpMethod.GET, "/api/customer/{id}").hasAuthority("CUSTOMER")
+                        .requestMatchers(HttpMethod.GET,"/api/ticket/v2").hasAnyAuthority("CUSTOMER","EXECUTIVE")
+                        .requestMatchers(HttpMethod.DELETE,"/api/ticket/hard/{id}").hasAuthority("CUSTOMER")
+
                         // Executive can be onboarded by manager after they login
                         .requestMatchers(HttpMethod.POST,"/api/executive/add").hasAuthority("MANAGER")
                         // Admin can onboard manager

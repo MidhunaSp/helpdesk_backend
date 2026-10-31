@@ -21,15 +21,17 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:5173")
 public class TicketController {
 
     private final TicketService ticketService;
 
     @PostMapping("/api/ticket/add")
-    public void addTicket(Principal principal, @Valid @RequestBody TicketDto ticketDto) {
-        ticketService.add(principal.getName(), ticketDto);
+    public TicketRespDto addTicket(Principal principal, @Valid @RequestBody TicketDto ticketDto) {
+        return ticketService.add(principal.getName(), ticketDto);
     }
 
+    // Done by Manager - activate the check after security config
     @PutMapping("/api/ticket/assign/{executiveId}/{ticketId}")
     public void assignExecutive(@PathVariable Long executiveId,
                                 @PathVariable Long ticketId,
@@ -117,6 +119,11 @@ public class TicketController {
         Instant toInstant = toDate.plusDays(1).atStartOfDay(ZoneOffset.UTC)
                 .toInstant();
         return ticketService.getTicketsByDate(fromInstant,toInstant);
+    }
+
+    @DeleteMapping("/api/ticket/hard/{id}")
+    public void deleteTicketHard(@PathVariable long id , Principal principal){
+        ticketService.deleteTicketHard(id, principal.getName());
     }
 }
 /*

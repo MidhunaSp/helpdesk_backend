@@ -1,0 +1,6 @@
+$kind: http-request
+url: localhost:8080/api/admin/user/john/status?active=false
+method: PUT
+queryParams:
+  active: "false"
+order: 4473246039951733
